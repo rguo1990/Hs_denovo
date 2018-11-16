@@ -1,4 +1,4 @@
-## I used this script to run SOAPdenovo2
+## I used this script to run SOAPdenovo2, version 2.04
 ## Different parameters K and M were tried, where K means K-mer length in De Bruijn graph and M is the mergelevel, the strength of merging similar sequences during continging (Default=1)
 
 $ all -s soap.contig.txt -K 23 -R -o graph_23 1>ass.log 2>ass.err 
