@@ -4,9 +4,9 @@ max_rd_len=260
 #paired-end library 1
 #average insert size
 avg_ins=550
-#if sequence needs to be reversed
+#if sequence needs to be reversed, 0 for small insert size and 1 for large insert size
 reverse_seq=0
-#in which part(s) the reads are used
+#in which part(s) the reads are used, 3 means both contigs and scaffolds assembly
 asm_flags=3
 rd_len_cutoff=250
 #in which order the reads are used while scaffolding
