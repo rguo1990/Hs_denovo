@@ -1,12 +1,16 @@
 ## I used this script to run SOAPdenovo2, version 2.04
 ## Different parameters K and M were tried, where K means K-mer length in De Bruijn graph and M is the mergelevel, the strength of merging similar sequences during continging (Default=1)
-
-$ all -s soap.contig.txt -K 23 -R -o graph_23 1>ass.log 2>ass.err 
+cd /data/SOAPdenovo2
+$ all -s ../soap.contig.txt -K 23 -R -o graph_23 1>ass.log 2>ass.err 
 $ all -s soap.contig.txt -K 33 -R -o graph_33 1>ass.log 2>ass.err
 $ all -s soap.contig.txt -K 37 -R -o graph_37 1>ass.log 2>ass.err
-$ all -s soap.contig.txt -K 39 -R -o graph_39 1>ass.log 2>ass.err
-$ all -s soap.contig.txt -K 39 -R -M 2 -o M2/graph_39 1>ass.log 2>ass.err
-$ all -s soap.contig.txt -K 39 -R -M 3 -o M3/graph_39 1>ass.log 2>ass.err
+mkdir Kmer39
+mkdir Kmer39/M1
+mkdir Kmer39/M2
+mkdir Kmer39/M3
+./SOAPdenovo-127mer all -s ../soap.contig.txt -p 48 -a 192 -K 39 -R -o /data/Kmer39/M1/graph_391 1>ass.log 2>ass.err
+./SOAPdenovo-127mer all -s ../soap.contig.txt -p 48 -a 192 -K 39 -R -M 2 -o /data/Kmer39/M2/graph_392 1>ass.log 2>ass.err
+./SOAPdenovo-127mer all -s ../soap.contig.txt -p 48 -a 192 -K 39 -R -M 3 -o /data/Kmer39/M3/graph_393 1>ass.log 2>ass.err
 $ all -s soap.contig.txt -K 41 -R -o graph_41 1>ass.log 2>ass.err
 $ all -s soap.contig.txt -K 41 -R -M 2 -o M2/graph_41 1>ass.log 2>ass.err
 $ all -s soap.contig.txt -K 41 -R -M 3 -o M3/graph_41 1>ass.log 2>ass.err
