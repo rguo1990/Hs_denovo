@@ -5,6 +5,14 @@ mkdir Kmer39
 mkdir Kmer39/M1
 mkdir Kmer39/M2
 mkdir Kmer39/M3
+mkdir Kmer41
+mkdir Kmer41/M1
+mkdir Kmer41/M2
+mkdir Kmer41/M3
+mkdir Kmer43
+mkdir Kmer43/M1
+mkdir Kmer43/M2
+mkdir Kmer43/M3
 cd /data/SOAPdenovo2
 $ all -s ../soap.contig.txt -K 23 -R -o graph_23 1>ass.log 2>ass.err 
 $ all -s soap.contig.txt -K 33 -R -o graph_33 1>ass.log 2>ass.err
