@@ -1,5 +1,6 @@
 ## I used this script to run SOAPdenovo2, version 2.04
 ## Different parameters K and M were tried, where K means K-mer length in De Bruijn graph and M is the mergelevel, the strength of merging similar sequences during continging (Default=1)
+## create folders for the results
 cd ~/data
 mkdir Kmer23
 mkdir Kmer33
@@ -23,6 +24,7 @@ mkdir Kmer83
 mkdir Kmer97
 mkdir Kmer107
 mkdir Kmer117
+## run SOAPdenovo2 all steps
 cd ~/data/SOAPdenovo2
 ./SOAPdenovo-127mer all -s ../soap.contig.txt -p 48 -K 23 -R -o ~/data/Kmer23/graph_23 1>~/data/Kmer23/ass.log 2>~/data/Kmer23/ass.err 
 ./SOAPdenovo-127mer all -s ../soap.contig.txt -p 48 -K 33 -R -o ~/data/Kmer33/graph_33 1>~/data/Kmer33/ass.log 2>~/data/Kmer33/ass.err
