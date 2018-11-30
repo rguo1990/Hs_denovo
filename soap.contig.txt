@@ -4,9 +4,9 @@ max_rd_len=260
 #paired-end library 1
 #average insert size
 avg_ins=550
-#if sequence needs to be reversed
+#if sequence needs to be reversed, 0 for small insert size and 1 for large insert size
 reverse_seq=0
-#in which part(s) the reads are used
+#in which part(s) the reads are used, 3 means both contigs and scaffolds assembly
 asm_flags=3
 rd_len_cutoff=100
 #in which order the reads are used while scaffolding
@@ -33,7 +33,7 @@ q1=/cbcb/project2-scratch/rongguo/Hs_denovo/paired_end/L002_R1.fastq
 q2=/cbcb/project2-scratch/rongguo/Hs_denovo/paired_end/L002_R2.fastq
 
 [LIB]
-#mate-paired library 1
+#mate-pair library 1
 avg_ins=2000
 reverse_seq=1
 rd_len_cutoff=125
@@ -47,7 +47,7 @@ q1=/cbcb/project2-scratch/rongguo/Hs_denovo/mate_pair/2KB_R1.fastq
 q2=/cbcb/project2-scratch/rongguo/Hs_denovo/mate_pair/2KB_R2.fastq
 
 [LIB]
-#mate-paired library 2
+#mate-pair library 2
 avg_ins=5000
 reverse_seq=1
 rd_len_cutoff=125
