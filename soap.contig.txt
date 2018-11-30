@@ -1,6 +1,7 @@
 #maximal read length
 max_rd_len=260
 [LIB]
+#paired-end library 1
 #average insert size
 avg_ins=550
 #if sequence needs to be reversed
@@ -19,6 +20,7 @@ q1=/cbcb/project2-scratch/rongguo/Hs_denovo/paired_end/L001_R1.fastq
 q2=/cbcb/project2-scratch/rongguo/Hs_denovo/paired_end/L001_R2.fastq
 
 [LIB]
+#paired-end library 2
 avg_ins=550
 reverse_seq=0
 asm_flags=3
@@ -31,6 +33,7 @@ q1=/cbcb/project2-scratch/rongguo/Hs_denovo/paired_end/L002_R1.fastq
 q2=/cbcb/project2-scratch/rongguo/Hs_denovo/paired_end/L002_R2.fastq
 
 [LIB]
+#mate-paired library 1
 avg_ins=2000
 reverse_seq=1
 rd_len_cutoff=125
@@ -44,6 +47,7 @@ q1=/cbcb/project2-scratch/rongguo/Hs_denovo/mate_pair/2KB_R1.fastq
 q2=/cbcb/project2-scratch/rongguo/Hs_denovo/mate_pair/2KB_R2.fastq
 
 [LIB]
+#mate-paired library 2
 avg_ins=5000
 reverse_seq=1
 rd_len_cutoff=125
