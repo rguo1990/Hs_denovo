@@ -1,0 +1,16 @@
+1. Create a key pair. Download it to your computer, you need this to log in. Make it executable.
+		chmod 400 my-key-pair.pem
+2. Create an instance and log into it. 
+3. Create a volume and mount to the instance, download all sequence data to the volume. 
+		mount /dev/xvdf /home/ubuntu/Volumes
+4. Run processes (alignments, etc.) and save output to the volume. 
+5. Unmount the volume.
+		umount -d /dev/sdh
+6. Terminate instance when processes finish running. Output should be saved to the volume so when a new instance is started you can mount that volume and all data is there, and taking image stores the programs in an AMI. 
+
+
+
+If you resize the volume run: 
+	resize2fs /dev/xvdf
+
+
