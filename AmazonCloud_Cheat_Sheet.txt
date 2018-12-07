@@ -19,6 +19,8 @@ sudo scp -i rong-umd.pem /media/megan/Elements2/Hsub_RawSeq_Data/MP/2KB_R1.fastq
 4. Run processes (alignments, etc.) and save output to the volume. 
 5. Unmount the volume.
 		umount -d /dev/xvdf
+## download data to the local computer
+sudo scp -i rong-umd.pem ec2-user@public_dns_name:~/data/ResultDownload /media/megan/Elements2/Hsub_RawSeq_Data/MP/
 6. Terminate instance when processes finish running. Output should be saved to the volume so when a new instance is started you can mount that volume and all data is there, and taking image stores the programs in an AMI. 
 7. If you resize the volume run: 
 	resize2fs /dev/xvdf
