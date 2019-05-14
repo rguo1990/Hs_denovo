@@ -21,4 +21,3 @@ gzip SOAP_cleaned.fa
 cd ../project_template
 cp ../SOAP_cleaned.fa.gz .
 sh run_all.batch
-
