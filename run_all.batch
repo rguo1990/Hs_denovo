@@ -1,0 +1,65 @@
+#!/bin/bash
+
+#### ===========================================================================
+#### IMPORTANT NOTE:
+#### For raw diploid assembly with >2000 scaffold sequences, 
+#### make sure to lift your system¡¯s openable file handle limit by invocating
+#### ¡°ulimit ¨Cn 655350¡± before running HM2 (root privilege required)!
+#### ===========================================================================
+
+#### ===========================================================================
+#### set the path to executables
+#### ===========================================================================
+PATH=/usr/share/perl5/:/home/ec2-user/data/HM2/chainNet_jksrc20100603_ubuntu64bit/:/home/ec2-user/data/HM2/lastz_1.02.00_centOS5/:/home/ec2-user/data/HM2/gapCloser_v1.12/:/home/ec2-user/data/HM2/SSPACE-STANDARD-3.0_linux-x86_64/:$PATH
+echo $PATH
+
+#### ===========================================================================
+#### step 1: break the misjoins and output the new diploid assembly
+#### ===========================================================================
+#### default input:        ./{assembly_name}.fa.gz
+#### default final output: ./{assembly_name}_A.fa.gz
+ 
+#./hm.batchA1.initiation_and_all_lastz  SOAP_cleaned
+#./hm.batchA2.chainNet_and_netToMaf     SOAP_cleaned
+#./hm.batchA3.misjoin_processing        SOAP_cleaned
+
+#### ===========================================================================
+#### step 2: separate/merge two alleles and output haploid assemblies
+#### ===========================================================================
+#### default input:        ./{assembly_name}_A.fa.gz
+#### default final output: ./{assembly_name}_A_ref.fa.gz
+#### default final output: ./{assembly_name}_A_alt.fa.gz
+  
+#./hm.batchB1.initiation_and_all_lastz             SOAP_cleaned_A
+#./hm.batchB2.chainNet_and_netToMaf                SOAP_cleaned_A
+#./hm.batchB3.haplomerger                          SOAP_cleaned_A
+#./hm.batchB4.refine_unpaired_sequences            SOAP_cleaned_A
+#./hm.batchB5.merge_paired_and_unpaired_sequences  SOAP_cleaned_A
+
+#### ===========================================================================
+#### step 3: further scaffold the obtained haploid assemblies
+#### ===========================================================================
+#### default input:        ./{assembly_name}_A_ref.fa.gz
+#### default final output: ./{assembly_name}_A_ref_C.fa.gz
+#### default final output: ./{assembly_name}_A_alt_C.fa.gz
+  
+#./hm.batchC1.hierarchical_scaffolding                      your_assembly_name_A_ref
+#./hm.batchC2.update_reference_and_alternative_assemblies   your_assembly_name_A_ref
+
+#### ===========================================================================
+#### step 4: remove tandem errors from haploid assemblies
+#### ===========================================================================
+#### default input:        ./{assembly_name}_A_ref_C.fa.gz
+#### default final output: ./{assembly_name}_A_ref_C_D.fa.gz
+
+./hm.batchD1.initiation_and_all_lastz     SOAP_cleaned_A_ref
+./hm.batchD2.chainNet_and_netToMaf        SOAP_cleaned_A_ref
+./hm.batchD3.remove_tandem_assemblies     SOAP_cleaned_A_ref
+
+#### ===========================================================================
+#### step 5: try to close Ngaps in haploid assemblies
+#### ===========================================================================
+#### default input:        ./{assembly_name}_A_ref_C_D.fa.gz
+#### default final output: ./{assembly_name}_A_ref_C_D_E.fa.gz
+
+#./hm.batchE1.wrapper_for_gapCloser_v1.12  your_assembly_name_A_ref_C_D
