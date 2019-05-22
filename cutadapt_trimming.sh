@@ -13,4 +13,3 @@ cutadapt -a AGATGTGTATAAGAGACAG -A CTGTCTCTTATACACATCT -o 2KB_R1_1_2.fastq -p 2K
 cutadapt -a CTGTCTCTTATACACATCT -A AGATGTGTATAAGAGACAG -o 5KB_R1_1.fastq -p 5KB_R2_1.fastq 5KB_R1.fastq 5KB_R2.fastq --minimum-length 10
 cutadapt -a AGATGTGTATAAGAGACAG -A CTGTCTCTTATACACATCT -o 5KB_R1_1_2.fastq -p 5KB_R2_1_2.fastq 5KB_R1_1.fastq 5KB_R2_1.fastq --minimum-length 10
     					      
-
