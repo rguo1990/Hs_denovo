@@ -1,0 +1,2 @@
+## script to re-label the scaffolds in the new assembly
+awk '/^>/ {print ">Scaffold_" ++i; next} {print}' < assembly_name.fasta > re_label_assembly.fasta
