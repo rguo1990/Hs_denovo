@@ -1,4 +1,5 @@
 ## the script was used to run Ragout2, a chromosome-level scaffolding using multiple references
+## the program was used to further extend scaffolds of published Hvir genome here
 ## multiple whole-genome alignment was done by SibeliaZ
 
 ## for sibeliaZ the sequence header of input fasta files should be in format: >genome.chromosome.#
