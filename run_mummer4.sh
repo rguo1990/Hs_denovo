@@ -14,3 +14,5 @@ cd Rong/MUMmer/mummer-4.0.0beta2/
 
 ## draw the synteny dotplot
 ./mummerplot -t png --layout (--fat) -R reference.fasta -Q query.fasta out.delta --large
+
+## blue: reverse matches, purple: forward matches
