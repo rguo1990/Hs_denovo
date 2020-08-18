@@ -1,4 +1,4 @@
-a script to plot Figure 1b, 1c, 1d
+## a script to plot Figure 1b, 1c, 1d
 
 lepidoptera <- readxl::read_excel("/Users/rongguo/UMD/Hs_denovo/writing/Manuscript/Table S2.xlsx",skip = 1,
                                   col_types = c("text", "text", "text","numeric","numeric","numeric","numeric","numeric","numeric","numeric","numeric",
