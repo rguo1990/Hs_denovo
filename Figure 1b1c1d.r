@@ -14,7 +14,7 @@ ratio <- lepidoptera$`Total Genome Size`/lepidoptera$`Scaffold N50`
 lepidoptera_log10 <- log10(lepidoptera$`Scaffold N50`)
 
 ## plot figure 1b -- contiguities of Lepidopteran assembled genomes
-ggplot(data=d,aes(x=`Family`,y=lepidoptera_log10,fill=`Family`)) + geom_boxplot(varwidth = TRUE) +
+ggplot(data=lepidoptera,aes(x=`Family`,y=lepidoptera_log10,fill=`Family`)) + geom_boxplot(varwidth = TRUE) + geom_point(col = "black") +
   labs(x="Lepidoptera families",y="log10(N50)",title="Contiguities of Lepidopteran Assembled Genomes") + theme_classic() +
   theme(plot.title = element_text(hjust = 0.5)) 
   
@@ -30,6 +30,6 @@ mean(lepidoptera$`C (%)`)
 median(lepidoptera$`C (%)`)
 
 ## plot figure 1d -- completeness of Lepidopteran assembled genomes
-ggplot(data=lepidoptera,aes(x=Family,y=`C (%)`,fill=`Family`)) + geom_boxplot(varwidth = TRUE) +
+ggplot(data=lepidoptera,aes(x=Family,y=`C (%)`,fill=`Family`)) + geom_boxplot(varwidth = TRUE) + geom_point(col="black") +
   labs(x="Lepidoptera families",y="Completeness (%)",title="Completeness of Lepidopteran Assembled Genomes") + theme_classic() +
   theme(plot.title = element_text(hjust = 0.5))
