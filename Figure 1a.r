@@ -11,6 +11,6 @@ mean(genomes$`Scaffold N50`)
 
 install.packages("ggplot2")
 library("ggplot2")
-ggplot(data=d,aes(x=`Order`,y=log10_N50,fill=`Order`)) + geom_boxplot(varwidth = TRUE)+stat_boxplot(geom="errorbar",width=0.15,aes(color=`Order`)) +
-  labs(x="insect orders",y="log10(N50)",title="Contiguities of Insect Assembled Genomes") + theme_classic() +
+ggplot(data=genomes,aes(x=`Order`,y=log10_N50,fill=`Order`)) + geom_boxplot(varwidth = TRUE) + geom_point(col = "black") +
+  labs(x="insect orders",y="log10(N50)",title="Contiguities of Insect Assembled Genomes") + theme_classic()+
   theme(plot.title = element_text(hjust = 0.5))
