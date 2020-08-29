@@ -19,10 +19,17 @@ ggplot(data=lepidoptera,aes(x=`Family`,y=lepidoptera_log10,fill=`Family`)) + geo
   theme(plot.title = element_text(hjust = 0.5)) 
   
 ## plot figure 1c -- N50 vs. Total Genome Size
-ggplot(data=lepidoptera,aes(x=`Total Genome Size`,y=lepidoptera_log10,col=Family)) + geom_point() +
-  labs(x="Total Genome Size",y="log10(N50)",title="N50 vs. Total Genome Size") + theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
-  
+sh <- c(1,2,2,2,3,4,4,4,5,6,7,8,9,9,9,10,11,12,rep(13,11),rep(14,32),rep(15,8),rep(16,6),17,18,19,19,19,20,20,21,22,22,23,23)
+d <- cbind(lepidoptera,sh)
+family <- lepidoptera$Family
+plot(x=d$`Total Genome Size`,y=lepidoptera_log10,col = c("sienna","bisque2","blue","brown","coral","orange","darkblue",
+                                                         "gold","gray","cyan","pink","yellow","maroon","navy","green","purple",
+                                                         "darkred","seashell","tan","violet","yellowgreen","hotpink","black")[d$sh],pch=19,
+     xlab = "Total Genome Size",ylab="log10(N50)",main="N50 vs. Total Genome Size")
+legend("bottomright",legend = unique(family),col = c("sienna","bisque2","blue","brown","coral","orange","darkblue",
+                                                     "gold","gray","cyan","pink","yellow","maroon","navy","green","purple",
+                                                     "darkred","seashell","tan","violet","yellowgreen","hotpink","black"),pch = 19,cex=0.4,ncol = 2,text.font = 2)
+
 ## the range of completeness
 min(lepidoptera$`C (%)`)
 max(lepidoptera$`C (%)`)
