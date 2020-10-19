@@ -2,7 +2,7 @@
 ## draw synteny dotplots to measure the similarities and differences between two assemblies
 
 ## run nucmer - a perl script for alignment of multiple closely related nucleotide sequences
-cd Rong/MUMmer/mummer-4.0.0beta2/
+cd ~/Rong/MUMmer/mummer-4.0.0beta2/
 ./nucmer --mum --mincluster 200 --maxgap 300 assembly1.fasta assembly2.fasta
 ## --mum use anchor matches that are unique in both ref & qry
 ## --mincluster minimum cluster length (default=65)
