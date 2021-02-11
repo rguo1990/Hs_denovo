@@ -45,3 +45,5 @@ cat head.sam SRR5514914_clean_filter.sam > SRR5514914_clean_2.sam
 ## run hagfish_extract to draw the histogram
 ## samFlag=65: read paired, first in pair
 ~/Rong/hagfish/hagfish_extract SRR5514914_clean_2.sam -v --samFlag=65 -S
+
+
