@@ -1,0 +1,25 @@
+## instructions on how to set up a new key pair in your computer and use it for ssh connection
+
+Step 1 - Create RSA key pair on your personal computer:
+ssh-keygen
+
+Step 2 - Change permissions in the remote computer to ssh with password to share key
+sudo nano /etc/ssh/sshd_config
+Change this line:
+PasswordAuthentication no
+to
+PasswordAuthentication yes
+Restart daemon: 
+sudo systemctl restart sshd
+
+Step 3 - Share key (from your computer type the following)
+ssh-copy-id -i ~/.ssh/mykey user@IP address (-p port)
+
+Step 4 - Change permissions on the remote computer back to PasswordAuthentication no and use systemctl to restart sshd
+Change this line:
+PasswordAuthentication yes
+to
+PasswordAuthentication no
+Restart daemon: 
+sudo systemctl restart sshd
+
