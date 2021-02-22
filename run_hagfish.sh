@@ -34,6 +34,16 @@ cut -f 2 filename.sam | sort | uniq
 
 ## Bitwise flags in one sam file: eg. 0, 101, 113, 129, 133, 137, 145, 147, 153, 16, 161, 163, 165, 177, 65, 69, 73, 81, 83, 89, 97, 99
 ## how to understand/decode samflags: https://broadinstitute.github.io/picard/explain-flags.html
+## samflags for paired-end library: (99,147),(83,163)
+## samflags for mate-paired library: (81,161),(97,145)
+
+## filter out contamination in the paired-end library, only leave the paired-end reads
+cd /media/megan/easystore/Rong/Hvir_data/PE
+head -n X SRR5463746.sam > head.sam
+awk '{if ($7 == "=") {print}}' SRR5463746.sam > SRR5463746_1.sam
+## filtering according to samFlag
+awk '{if (($2 == 99) || ($2 == 147) || ($2 ==83) || ($2 == 163)) {print}}' SRR5463746_1.sam > SRR5463746_2.sam
+cat head.sam SRR5463746_2.sam > SRR5463746_3.sam
 
 ## run hagfish_extract to draw histogram of the insert size of paired end library
 cd ~/Rong/hagfish
