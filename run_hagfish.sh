@@ -28,6 +28,13 @@ cutadapt -a CTGTCTCTTATACACATCT -A CTGTCTCTTATACACATCT -o SRR5463745_1_clean.fas
 
 ## convert sam file to bam file
 samtools view -bS SRR5463746.sam -o SRR5463746.bam
+
+## to view unique samflags in the sam file
+cut -f 2 filename.sam | sort | uniq
+
+## Bitwise flags in one sam file: eg. 0, 101, 113, 129, 133, 137, 145, 147, 153, 16, 161, 163, 165, 177, 65, 69, 73, 81, 83, 89, 97, 99
+## how to understand/decode samflags: https://broadinstitute.github.io/picard/explain-flags.html
+
 ## run hagfish_extract to draw histogram of the insert size of paired end library
 cd ~/Rong/hagfish
 ./hagfish_extract /media/megan/easystore/Rong/Hvir_data/PE/SRR5463746.bam -v
