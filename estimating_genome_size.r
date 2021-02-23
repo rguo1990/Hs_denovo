@@ -32,6 +32,9 @@ sum(as.numeric(dataframe19[5:9997,1]*dataframe19[5:9997,2]))/48
 ## compared with Poisson distribution
 singleC <- sum(as.numeric(dataframe19[5:80,1]*dataframe19[5:80,2]))/48
 poisdtb <- dpois(1:100,48)*singleC
-plot(poisdtb, type='l', lty=2, col="green")
+plot(poisdtb, type='l', lty=2, col="green",
+     main = "K-mer occurrence frequency",xlab="K-mer coverage",ylab="K-mer counts frequency")
 lines(dataframe19[5:100,48] * singleC, type = "l", col=3)#, Ity=2)
 lines(dataframe19[5:100,],type= "l")
+legend("topright",c("C.virescens","Poisson distribution"),col=c("black","green"),lty=c(1,2),cex = 0.8,inset = 0.01, box.col = "white")
+
