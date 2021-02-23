@@ -23,6 +23,7 @@ sum(as.numeric(dataframe19[5:65,1]*dataframe19[5:65,2]))/48
 (sum(as.numeric(dataframe19[5:65,1]*dataframe19[5:65,2])))/17517864459
 ## = 264380989 * 48/17517864459
 ## = 72.44%
+## the heterozygous rate is = 1-72.44% = 27.56%
 
 ## the total genome size
 sum(as.numeric(dataframe19[5:9997,1]*dataframe19[5:9997,2]))/48
