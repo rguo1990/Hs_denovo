@@ -58,6 +58,10 @@ head -n 8829 SRR5514914_clean.sam > head.sam
 awk '{if ($7 == "=") {print}}' SRR5514914_clean.sam > SRR5514914_clean_1.sam
 ## filtering according to samFlag, only leave mate-paired reads
 awk '{if (($2 == 81) || ($2 == 161) || ($2 ==97) || ($2 == 145)) {print}}' SRR5514914_clean_1.sam > SRR5514914_clean_filter.sam
+
+## mate-paired library, only leave those insertion sizes larger than 6,000 bp
+awk '{if ($8-$4 > 6000 || $8-$4 < -6000) {print}}' SRR5463745_3.sam > SRR5463745_4.sam
+
 cat head.sam SRR5514914_clean_filter.sam > SRR5514914_clean_2.sam
 ## run hagfish_extract to draw the histogram
 ## samFlag=65: read paired, first in pair
