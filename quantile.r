@@ -17,9 +17,9 @@ percentile(264374)
 ## above 0.4597 = 45.98%
 
 ## contiguity of new solid H.subflexa assembly
-## percentile <- ecdf(lepidoptera$`Scaffold N50`)
-percentile(1151925)
-## above 0.6896552 = 68.97%
+percentile <- ecdf(lepidoptera$`Scaffold N50`)
+percentile(1324176)
+## above 0.7011494 = 70.11%
 
 ## contiguity of new unsolid H.subflexa assembly
 ## percentile <- ecdf(lepidoptera$`Scaffold N50`)
