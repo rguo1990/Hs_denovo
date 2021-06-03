@@ -12,4 +12,4 @@ Hvir.fasta = /home/megan/Rong/Ragout/Hvir_Dovetail_relabel.fasta
 
 #Maf alignment input. Sequences will be extracted from the alignment
 
-.maf = ~/Rong/SibeliaZ/SibeliaZ/SibeliaZ-LCB/bin/sibeliaz_out/alignment.maf
+.maf = ~/Rong/SibeliaZ/SibeliaZ/SibeliaZ-LCB/bin/sibeliaz_out_Hsub/alignment.maf
