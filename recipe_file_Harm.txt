@@ -1,0 +1,15 @@
+#reference and target genome names (required)
+
+.references = Hzea,Hvir,Hsub
+.target = Harm
+
+#paths to genome fasta files (required for Sibelia)
+
+Hsub.fasta = /home/megan/Rong/Ragout/Hsub_relabel.fasta
+Harm.fasta = /home/megan/Rong/Ragout/Harm_relabel.fasta
+Hzea.fasta = /home/megan/Rong/Ragout/Hzea_relabel.fasta
+Hvir.fasta = /home/megan/Rong/Ragout/Hvir_Dovetail_relabel.fasta
+
+#Maf alignment input. Sequences will be extracted from the alignment
+
+.maf = ~/Rong/SibeliaZ/SibeliaZ/SibeliaZ-LCB/bin/sibeliaz_out_Hsub/alignment.maf
