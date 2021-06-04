@@ -27,3 +27,9 @@ awk '/^>/ {print ">scaffold." ++i; next} {print}' < Hvir_Dovetail_softmask.fasta
 cd ~/Rong/Ragout/Ragout/bin
 ./ragout -s maf -t 8 -o ../../output_Hsub_unsolid ../../recipe_file_Hsub.txt
 ./ragout -s maf --solid-scaffolds -t 8 -o ../../output_Hsub_solid ../../recipe_file_Hsub.txt
+
+./ragout -s maf -t 8 -o ../../output_Hzea_unsolid ../../recipe_file_Hzea.txt
+./ragout -s maf --solid-scaffolds -t 8 -o ../../output_Hzea_solid ../../recipe_file_Hzea.txt
+
+./ragout -s maf -t 8 -o ../../output_Harm_unsolid ../../recipe_file_Harm.txt
+./ragout -s maf --solid-scaffolds -t 8 -o ../../output_Harm_solid ../../recipe_file_Harm.txt
