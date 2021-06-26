@@ -13,4 +13,8 @@ install.packages("ggplot2")
 library("ggplot2")
 ggplot(data=genomes,aes(x=`Order`,y=log10_N50,fill=`Order`)) + geom_boxplot(varwidth = TRUE) + geom_point(col = "black") +
   labs(x="insect orders",y="log10(N50)",title="Contiguities of Insect Assembled Genomes") + theme_classic()+
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text.x = element_text(size = 10, color = "black",vjust = 0.5, hjust = 0.5, angle = 45)) +
+  theme(axis.title.x = element_text(size = 15, face = "bold")) +
+  theme(axis.title.y = element_text(size = 15, face = "bold")) +
+  theme(title = element_text(size = 18, face = "bold")) 
