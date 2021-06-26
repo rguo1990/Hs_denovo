@@ -16,7 +16,11 @@ lepidoptera_log10 <- log10(lepidoptera$`Scaffold N50`)
 ## plot figure 1b -- contiguities of Lepidopteran assembled genomes
 ggplot(data=lepidoptera,aes(x=`Family`,y=lepidoptera_log10,fill=`Family`)) + geom_boxplot(varwidth = TRUE) + geom_point(col = "black") +
   labs(x="Lepidoptera families",y="log10(N50)",title="Contiguities of Lepidopteran Assembled Genomes") + theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5)) 
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text.x = element_text(size = 10, color = "black",vjust = 0.5, hjust = 0.5, angle = 45)) +
+  theme(axis.title.x = element_text(size = 15, face = "bold")) +
+  theme(axis.title.y = element_text(size = 15, face = "bold")) +
+  theme(title = element_text(size = 18, face = "bold")) 
   
 ## plot figure 1c -- N50 vs. Total Genome Size
 sh <- c(1,2,2,2,3,4,4,4,5,6,7,8,9,9,9,10,11,12,rep(13,11),rep(14,32),rep(15,8),rep(16,6),17,18,19,19,19,20,20,21,22,22,23,23)
@@ -39,4 +43,8 @@ median(lepidoptera$`C (%)`)
 ## plot figure 1d -- completeness of Lepidopteran assembled genomes
 ggplot(data=lepidoptera,aes(x=Family,y=`C (%)`,fill=`Family`)) + geom_boxplot(varwidth = TRUE) + geom_point(col="black") +
   labs(x="Lepidoptera families",y="Completeness (%)",title="Completeness of Lepidopteran Assembled Genomes") + theme_classic() +
-  theme(plot.title = element_text(hjust = 0.5))
+  theme(plot.title = element_text(hjust = 0.5)) +
+  theme(axis.text.x = element_text(size = 10, color = "black",vjust = 0.5, hjust = 0.5, angle = 45)) +
+  theme(axis.title.x = element_text(size = 15, face = "bold")) +
+  theme(axis.title.y = element_text(size = 15, face = "bold")) +
+  theme(title = element_text(size = 18, face = "bold")) 
