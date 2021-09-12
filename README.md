@@ -1,2 +1,3 @@
 # Hs_denovo
-## The following files were used to assemble the first draft of the Heliothis subflexa genome.
+## The files were used in validation of a reference-assisted assembly approach using existing and novel Heliothine genomes.
+## A novel H.subflexa short-read assembly was completed, and it was also used in the validation part.
