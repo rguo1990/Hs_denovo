@@ -13,6 +13,7 @@
 		mkdir ~/data
 ## mount the volume to the location
 		mount /dev/xvdf /home/ubuntu/data
+## need to re-do this every time re-start the instance
 ## upload all sequence data to the volume
 sudo scp -i rong-umd.pem /media/megan/Elements2/Hsub_RawSeq_Data/MP/2KB_R1.fastq ec2-user@public_dns_name:~/data
 
