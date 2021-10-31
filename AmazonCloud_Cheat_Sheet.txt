@@ -26,3 +26,12 @@ sudo scp -i rong-umd.pem ec2-user@public_dns_name:~/data/ResultDownload /media/m
 7. If you resize the volume run: 
 	resize2fs /dev/xvdf
 ## You need to first change the volume size in AWS website. Select "Modify Volume" and "Size".
+
+8. Modify the size of root volume:
+## Need to first change the volume size in AWS website.
+lsblk
+## confirm the partition size is smaller than the volume size
+## prepare the growth of the partition size:
+sudo growpart /dev/xvda 1
+sudo resize2fs /dev/xvda1 
+df -h
