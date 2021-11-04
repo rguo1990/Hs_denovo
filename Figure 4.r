@@ -1,4 +1,4 @@
-## The R script to plot Figure 4: improved N50 values and completeness of H.zea and H.arm assemblies
+## The R script to plot Figure 4: contiguity and completeness changes of H.zea and H.arm assemblies
 
 names <- c("H.zea","H.zea_solid","H.zea_unsolid","H.arm","H.arm_solid","H.arm_unsolid")
 N50 <- c(201477,6100690,8865798,1000414,9477009,9240022)
