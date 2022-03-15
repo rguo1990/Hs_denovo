@@ -1,5 +1,12 @@
 ## the script was used to align the paired end library SRR5463746 back to the H.virescens assemblies, and calculate mapping back rate
 
+## map the whole data set to the H.virescens assemblies
+bowtie2 -x ~/Rong/H_vir/H_vir -1 SRR5463746_1.fastq -2 SRR5463746_2.fastq -p 15 1> SRR5463746.sam 2> Hvir.report
+bowtie2 -x ~/Rong/H_vir/Dovetail -1 SRR5463746_1.fastq -2 SRR5463746_2.fastq -p 15 1> Dovetail.sam 2> Dovetail.report
+bowtie2 -x ~/Rong/H_vir/ragout_solid -1 SRR5463746_1.fastq -2 SRR5463746_2.fastq -p 15 1> ragout_solid.sam 2> ragout_solid.report
+bowtie2 -x ~/Rong/H_vir/ragout_unsolid -1 SRR5463746_1.fastq -2 SRR5463746_2.fastq -p 15 1> ragout_unsolid.sam 2> ragout_unsolid.report
+
+
 ## randomly subset the fastq files into 5 datasets, and each has 10% of the original data
 python randomReadSubSample.py -f1 SRR5463746_1.fastq -f2 SRR5463746_2.fastq -n 5 -r 0 -s 0.1 -o SRR5463746_mappingback0.1
 
